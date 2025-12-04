@@ -66,7 +66,7 @@ function preinit()
     end
 
     makeLinter("gcc", "c", "gcc", {"-fsyntax-only", "-Wall", "-Wextra", "%f"}, "%f:%l:%c:.+: %m")
-    makeLinter("g++", "c++", "g++", {"-fsyntax-only","-Wall", "-Wextra", "%f"}, "%f:%l:%c:.+: %m")
+    makeLinter("g++", "c++", "g++", {"-std=c++23","-fsyntax-only","-Wall", "-Wextra", "%f"}, "%f:%l:%c:.+: %m")
     makeLinter("dmd", "d", "dmd", {"-color=off", "-o-", "-w", "-wi", "-c", "%f"}, "%f%(%l%):.+: %m")
     makeLinter("ldc2", "d", "ldc2", {"--o-", "--vcolumns", "-w", "-c", "%f"}, "%f%(%l,%c%):[^:]+: %m")
     makeLinter("gdc", "d", "gdc", {"-fsyntax-only","-Wall", "-Wextra", "%f"}, "%f:%l:%c:.+: %m")
